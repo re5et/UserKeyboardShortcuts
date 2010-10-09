@@ -5,7 +5,7 @@ UserKeyboardShortcuts is a refactor of the Keyboard class provided by mootools-m
 
 You just use Keyboard.addShortcuts (provided by Keyboard.Extras) as you usually would, then the user can change the keys to their liking.  The assignments they make will be stored using localStorage (failing that a cookie) and will be restored on each subsequent page load.
 
-![Screenshot](http://re5et.github.com/projects/userKeyboardShortcuts/assets/images/screenshot.png)
+![Screenshot](http://re5et.github.com/assets/images/user-keyboard-shortcuts-screenshot.png)
 
 How to use
 ----------
