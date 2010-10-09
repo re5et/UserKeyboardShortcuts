@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<title>UserKeyboardShortcuts Demo</title>
+	<script src="assets/js/mootools.js"></script>
+	<script src="assets/js/mootools-more.js"></script>
+	<script src="../Source/user-keyboard-shortcuts.js"></script>
+	<script src="assets/js/example.js"></script>
+	<link rel="stylesheet" href="assets/css/user-keyboard-shortcuts.css" type="text/css" media="screen" />
+    </head>
+    <body>
+		<p>UserKeyboardShortcuts is a refactor of the Keyboard class provided by mootools-more. It makes it easy for you to provide local user-customizable keyboard shortcuts for your users that you don't have to care about.</p>
+		<p>You just use Keyboard.addShortcuts (provided by Keyboard.Extras) as you usually would, then the user can change the keys to their liking.  The assignments they make will be stored using localStorage (failing that a cookie) and will be restored on each subsequent page load.</p>
+		<p>Hit the <code class="show-and-change highlight">m</code> key/s to open the shortcut changing menu, try changing a few things, and then reload the page.  Your shortcuts should be as you set them.</p>
+		<span id="show-and-change">shortcuts: <span class="show-and-change">m</span></span>
+    </body>
+</html>
