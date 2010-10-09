@@ -1,3 +1,20 @@
+/*
+---
+script: user-keyboard-shortcuts.js
+
+description: Refactor of Keyboard to allow for saving local user-customizable keyboard shortcuts
+
+license: MIT-style
+
+authors: [atom smith]
+
+requires:
+- core/1.2.4: [Core, Browser, Array, Function, Number, String, Hash, Event, Class.Extras, Element.Event, Element.Style, Selectors, JSON, Cookie]
+- more/1.2.4.4 [Class.Refactor, Keyboard, Keyboard.Extras]
+provides: [UserKeyboardShortcuts]
+...
+*/
+
 var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 
 	options: {
