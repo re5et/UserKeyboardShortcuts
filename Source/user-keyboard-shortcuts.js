@@ -9,8 +9,8 @@ license: MIT-style
 authors: [atom smith]
 
 requires:
-- core/1.2.4: [Core, Browser, Array, Function, Number, String, Hash, Event, Class.Extras, Element.Event, Element.Style, Selectors, JSON, Cookie]
-- more/1.2.4.4 [Class.Refactor, Keyboard, Keyboard.Extras]
+- core/1.3: [Core, Browser, Array, Function, Number, String, Hash, Event, Class.Extras, Element.Event, Element.Style, Selectors, JSON, Cookie]
+- more/1.3.0.1rc1 [Class.Refactor, Keyboard, Keyboard.Extras]
 provides: [UserKeyboardShortcuts]
 ...
 */
@@ -48,7 +48,7 @@ var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 
 		stored = JSON.decode(stored);
 
-		if($defined(stored)){
+		if(stored != undefined){
 			stored.each(function(shortcut){
 				this.saved[shortcut.name] = shortcut.keys;
 			}, this);
@@ -66,7 +66,7 @@ var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 		this.handleSaved(shortcut);
 		this.saveShortcuts();
 
-		if($defined(this.showerAndChanger)){
+		if(this.showerAndChanger != undefined){
 			this.addToShowAndChange(shortcut);
 		}
 
@@ -75,7 +75,7 @@ var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 
 	handleSaved: function(shortcut){
 		var savedKeys = this.saved[shortcut.name];
-		if($defined(savedKeys)){
+		if(savedKeys != undefined){
 			this.changeShortcut(shortcut.name, savedKeys)
 		}
 	},
@@ -100,7 +100,7 @@ var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 	},
 
 	showAndChange: function(){
-		if(!$defined(this.showerAndChanger))
+		if(this.showerAndChanger == undefined)
 		{
 
 			this.showerAndChanger = new Element('ul', this.options.showerAndChanger);
@@ -173,7 +173,7 @@ var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 		}
 		if(event.shift){
 			var specialKey = this.specialMap[String.fromCharCode(event.code)];
-			if($defined(specialKey))
+			if(specialKey != undefined)
 			{
 				event.key = specialKey;
 			}
@@ -190,7 +190,7 @@ var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 		this.defaults.each(function(d){
 			this.changeShortcut(d.name, d.keys);
 		}, this);
-		if($defined(this.showerAndChanger)){
+		if(this.showerAndChanger != undefined){
 			this.showerAndChanger.getElements('.'+this.options.prefixClass+'-keys')
 				.each(function(item){
 					var shortcut = this.getShortcut(item.retrieve('shortcutName'));

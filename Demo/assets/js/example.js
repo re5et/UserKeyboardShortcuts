@@ -27,7 +27,8 @@ window.addEvent('domready', function(){
 			'keys': 'ctrl+alt+shift+/',
 			'description': 'Change the background color of the body to a random color.',
 			'handler': function(){
-				setBackgroundColor($RGB($random(0, 255), $random(0, 255), $random(0, 255)))
+				var color = new Color([Number.random(0, 255), Number.random(0, 255), Number.random(0, 255)]);
+				setBackgroundColor(color);
 			}
 		}
 	});
