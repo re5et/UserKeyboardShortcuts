@@ -139,14 +139,18 @@ var UserKeyboardShortcuts = Class.refactor(Keyboard, {
 			},
 			click: function(){
 				keys.set('text', 'type new...');
-				item.addEvent('keypress', function(event){
+				item.addEvent('keydown',function(event){
+				  event.stop()
+				})
+				item.addEvent('keyup', function(event){
 					event = new Event(event);
 					event.stop();
 					item.focus();
 					var newKeys = this.parseKeypress(event);
 					keys.set('text', newKeys);
 					this.changeShortcut(shortcut.name, newKeys);
-					item.removeEvents('keypress');
+					item.removeEvents('keyup');
+					item.removeEvents('keydown');
 					item.blur();
 				}.bind(this));
 			}.bind(this)
